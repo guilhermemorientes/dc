@@ -97,7 +97,7 @@ const FormHandler = {
 
       try {
         const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbxUxG7eR1-ZCm7IvUcJHWBFsXQFuWa510LCWl2VJgZJPwCW31vsYsHySt5XKNsp-0p4qg/exec",
+          "https://script.google.com/macros/s/AKfycby5IVR3RX_62WjxC39r4lvH4wJOEzoXIIuTN4CM_p7kjG25f73gzLvoantVp_S_g-IS/exec",
           {
             method: "POST",
             headers: {
