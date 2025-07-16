@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
       };
 
       try {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbwaNr58I9pGFNh13pH5oKOoQu81I5gtZSXiZczJgPJVSgAqEsQm5gelH-pT6WsYBw4/exec', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
+const response = await fetch('https://script.google.com/macros/s/AKfycbwaNr58I9pGFNh13pH5oKOoQu81I5gtZSXiZczJgPJVSgAqEsQm5gelH-pT6WsYBw4/exec', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data)
+});
 
         const result = await response.json();
 
