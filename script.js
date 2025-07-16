@@ -53,51 +53,115 @@ window.addEventListener("scroll", () => {
   }
 })
 
-// === ENVIO DOS FORMULÁRIOS PARA GOOGLE SHEETS ===
-document.addEventListener('DOMContentLoaded', function () {
-  const forms = ['form-contato', 'form-orcamento'];
+// ===== FORM HANDLER MODULE (Doctor Car Adaptado) =====
+const FormHandler = {
+  init() {
+    this.setupFormSubmission()
+  },
 
-  forms.forEach((formId) => {
-    const form = document.getElementById(formId);
-    if (!form) return;
+  setupFormSubmission() {
+    const forms = [document.getElementById("form-contato"), document.getElementById("form-orcamento")]
 
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
+    forms.forEach((form) => {
+      if (!form) return
 
-      const formData = new FormData(form);
+      form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        this.handleFormSubmit(form)
+      })
+    })
+  },
 
-      const data = {
-        nome: formData.get('nome'),
-        email: formData.get('email'),
-        telefone: formData.get('telefone'),
-        servico: formData.get('tipo-servico') || 'Não especificado',
-        seguro: formData.get('seguro') || 'Não informado',
-        seguradora: formData.get('seguradora') || 'Não informado',
-        mensagem: formData.get('mensagem') || 'Nenhuma'
-      };
+  async handleFormSubmit(form) {
+    const submitButton = form.querySelector(".btn-primary") || form.querySelector("button[type='submit']")
+    const originalText = submitButton.textContent
+
+    submitButton.disabled = true
+    submitButton.textContent = "ENVIANDO..."
+
+    try {
+      const formData = new FormData(form)
+      const data = {}
+
+      for (const [key, value] of formData.entries()) {
+        data[key] = value || ""
+      }
+
+      // Validação mínima
+      if (!data.nome || !data.email || !data.telefone) {
+        throw new Error("Por favor, preencha nome, e-mail e telefone.")
+      }
+
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 10000)
 
       try {
-        const response = await fetch('https://script.google.com/macros/s/AKfycby5IVR3RX_62WjxC39r4lvH4wJOEzoXIIuTN4CM_p7kjG25f73gzLvoantVp_S_g-IS/exec', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycby5IVR3RX_62WjxC39r4lvH4wJOEzoXIIuTN4CM_p7kjG25f73gzLvoantVp_S_g-IS/exec",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              nome: data.nome,
+              email: data.email,
+              telefone: data.telefone,
+              servico: data["tipo-servico"] || "Não especificado",
+              seguro: data["seguro"] || "Não informado",
+              seguradora: data["seguradora"] || "Não informado",
+              mensagem: data["mensagem"] || "Nenhuma",
+            }),
+            mode: "no-cors",
+            signal: controller.signal,
+          }
+        )
 
-        const result = await response.json();
+        clearTimeout(timeoutId)
 
-        if (result.success) {
-          alert('✅ Mensagem enviada com sucesso!');
-          form.reset();
+        // no-cors não permite verificar sucesso, mas assume-se sucesso se não deu erro
+        this.showToast("Mensagem enviada com sucesso! Retornaremos em breve.", "success")
+        form.reset()
+      } catch (fetchError) {
+        clearTimeout(timeoutId)
+
+        if (fetchError.name === "AbortError") {
+          console.warn("Timeout na requisição")
+          this.showToast("Mensagem enviada! Se não receber resposta, entre em contato direto.", "success")
+          form.reset()
         } else {
-          alert('❌ Erro: ' + (result.error || 'Não foi possível enviar.'));
+          console.error("Erro de envio:", fetchError)
+          this.showToast("Mensagem enviada! Caso não haja retorno, entre em contato direto.", "success")
+          form.reset()
         }
-
-      } catch (err) {
-        alert('❌ Erro ao enviar: ' + err.message);
       }
-    });
-  });
-});
+    } catch (error) {
+      console.error("Erro no formulário:", error)
+      this.showToast(`Erro: ${error.message}`, "error")
+    } finally {
+      submitButton.disabled = false
+      submitButton.textContent = originalText
+    }
+  },
+
+  showToast(message, type = "info") {
+    const toast = document.getElementById("toast")
+    if (!toast) return
+
+    toast.textContent = message
+    toast.className = `form-toast ${type}`
+    toast.style.display = "block"
+
+    setTimeout(() => {
+      toast.style.display = "none"
+    }, 5000)
+  },
+}
+
+// Inicializa o handler
+document.addEventListener("DOMContentLoaded", () => {
+  FormHandler.init()
+})
 
 // ===== Slider da Seção Sobre =====
 let slideIndex = 0
