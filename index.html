@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Doctor Car - Premium Automotive Care</title>
+  <meta name="description" content="Doctor Car - Especialistas em carros de luxo. Funilaria premium, pintura de alta qualidade e estética automotiva exclusiva em Jundiaí.">
+  <meta name="keywords" content="carros de luxo, funilaria premium, pintura automotiva, estética exclusiva, Jundiaí">
+  <meta name="author" content="Doctor Car">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#inicio" class="logo">
+        <img src="/img/logo.webp" alt="Doctor Car Logo" class="navbar-logo">
+        <span class="logo-text">DOCTOR CAR</span>
+      </a>
+      <ul class="menu">
+        <li><a href="#inicio" class="nav-link"><i class="fas fa-home"></i> INÍCIO</a></li>
+        <li><a href="#sobre" class="nav-link"><i class="fas fa-info-circle"></i> SOBRE</a></li>
+        <li><a href="#servicos" class="nav-link"><i class="fas fa-tools"></i> SERVIÇOS</a></li>
+        <li><a href="#galeria" class="nav-link"><i class="fas fa-images"></i> GALERIA</a></li>
+        <li><a href="#contato" class="nav-link"><i class="fas fa-envelope"></i> CONTATO</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="hero" style="background-image: url('/img/background.webp');">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          
+<h1>Excelência<br><span class="highlight">em Funilaria</span></h1>
+          <p class="hero-subtitle">Transformamos acidentes em perfeição. Especialistas em veículos premium com tecnologia avançada e acabamento impecável.</p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <i class="fas fa-calendar-alt"></i>
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Anos</div>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-car"></i>
+              <div class="stat-number">2000+</div>
+              <div class="stat-label">Carros</div>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-thumbs-up"></i>
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Satisfação</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-form">
+          <div class="form-header">
+            <h3><i class="fas fa-clipboard-list"></i> Solicite um Orçamento</h3>
+            <div class="form-line"></div>
+          </div>
+          <form id="form-orcamento">
+            <input type="text" name="nome" placeholder="Nome Completo" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="tel" name="telefone" placeholder="Telefone" required>
+            <select name="tipo-servico" required>
+              <option disabled selected>Tipo de Serviço</option>
+              <option>Funilaria Premium</option>
+              <option>Martelinho de Ouro</option>
+              <option>Pintura Automotiva</option>
+              <option>Polimento e Cristalização</option>
+              <option>Estética Automotiva</option>
+              <option>Outros</option>
+            </select>
+            <select name="seguro" required>
+              <option disabled selected>Acionará o Seguro?</option>
+              <option>Sim</option>
+              <option>Não</option>
+            </select>
+            <select name="seguradora">
+              <option disabled selected>Qual Seguradora? (opcional)</option>
+              <option>Alfa Seguradora</option>
+              <option>Allianz</option>
+              <option>Azul Seguros</option>
+              <option>BB Seguros</option>
+              <option>Bradesco Seguros</option>
+              <option>Generali</option>
+              <option>HDI Seguros</option>
+              <option>Liberty Seguros</option>
+              <option>Mapfre</option>
+              <option>Porto Seguro</option>
+              <option>Sompo Seguros</option>
+              <option>SulAmérica</option>
+              <option>Tokio Marine</option>
+              <option>Youse</option>
+              <option>Zurich Seguros</option>
+              <option>Outras</option>
+            </select>
+            <textarea name="mensagem" placeholder="Mensagem Adicional" rows="3"></textarea>
+            <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> SOLICITAR ORÇAMENTO</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Section -->
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <div class="section-header">
+        <h2>NOSSA HISTÓRIA</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="sobre-grid">
+        <div class="sobre-content">
+          <h3>Tradição e Inovação em Cuidados Automotivos</h3>
+          <p>Na Doctor Car, combinamos décadas de experiência com as mais avançadas tecnologias do mercado automotivo. Nossa paixão por carros de luxo nos levou a criar um ambiente exclusivo onde cada veículo recebe tratamento personalizado e cuidados excepcionais.</p>
+          
+          <div class="sobre-features">
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+              <div class="feature-content">
+                <h4>Excelência Reconhecida</h4>
+                <p>Referência em qualidade e atendimento premium no mercado automotivo</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-cogs"></i></div>
+              <div class="feature-content">
+                <h4>Tecnologia Avançada</h4>
+                <p>Equipamentos de última geração para resultados perfeitos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sobre-slider-wrapper">
+          <div class="sobre-slider" id="slider-sobre">
+            <img src="/img/sobre/sobre1.webp" alt="Fachada da Doctor Car">
+            <img src="/img/sobre/sobre2.webp" alt="Interior da oficina">
+            <img src="/img/sobre/sobre3.webp" alt="Área de trabalho">
+            <img src="/img/sobre/sobre4.webp" alt="Equipamentos modernos">
+            <img src="/img/sobre/sobre5.webp" alt="Equipe especializada">
+          </div>
+          <div class="slider-controls">
+            <button class="slider-btn prev" onclick="mudarSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next" onclick="mudarSlide(1)"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div class="slider-dots" id="slider-dots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços Section -->
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <div class="section-header">
+        <h2>NOSSOS SERVIÇOS</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Da funilaria à estética automotiva, oferecemos serviços especializados com qualidade excepcional e atenção aos mínimos detalhes.</p>
+      </div>
+      
+      <div class="servicos-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-hammer"></i></div>
+          <h4>Funilaria Premium</h4>
+          <p>Recuperação de peças com precisão milimétrica e acabamento de fábrica para veículos de luxo.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-spray-can"></i></div>
+          <h4>Pintura Automotiva</h4>
+          <p>Cabine pressurizada com tintas premium e processo de secagem controlada para acabamento perfeito.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-tools"></i></div>
+          <h4>Troca de Peças</h4>
+          <p>Substituição com peças originais certificadas e montagem técnica especializada.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-magic"></i></div>
+          <h4>Martelinho de Ouro</h4>
+          <p>Técnica exclusiva para remoção de amassados preservando 100% da pintura original.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-gem"></i></div>
+          <h4>Cristalização</h4>
+          <p>Proteção nanocerâmica com brilho intenso e durabilidade superior contra intempéries.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>Vitrificação</h4>
+          <p>Blindagem molecular da pintura com efeito espelhado e proteção de longa duração.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-circle"></i></div>
+          <h4>Polimento Técnico</h4>
+          <p>Correção de micro-riscos com abrasivos de precisão e renovação completa do brilho.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-broom"></i></div>
+          <h4>Higienização Interna</h4>
+          <p>Limpeza profunda com produtos alemães e equipamentos de última geração.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-couch"></i></div>
+          <h4>Hidratação do Couro</h4>
+          <p>Tratamento especializado com produtos premium para restaurar maciez e aspecto original dos bancos.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-umbrella"></i></div>
+          <h4>Impermeabilização</h4>
+          <p>Película protetora invisível de alta tecnologia contra líquidos e manchas.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+          <h4>Reparos de Pintura</h4>
+          <p>Correção pontual com precisão cirúrgica para revitalização perfeita da superfície.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-plus-circle"></i></div>
+          <h4>Instalação de Acessórios</h4>
+          <p>Montagem profissional de acessórios premium com garantia e acabamento impecável.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria Section -->
+  <section id="galeria" class="galeria">
+    <div class="container">
+      <div class="section-header">
+        <h2>NOSSOS TRABALHOS</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Confira alguns dos nossos trabalhos mais recentes e acompanhe nossa excelência em cada projeto realizado.</p>
+      </div>
+      
+      <!-- Plugin do Instagram - Elfsight -->
+      <div class="galeria-container">
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <div class="elfsight-app-7c8a84fb-716d-4577-a7a3-1a0da268a33b" data-elfsight-app-lazy></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato Section -->
+  <section id="contato" class="contato">
+    <div class="container">
+      <!-- Cabeçalho centralizado fora dos grids -->
+      <div class="section-header">
+        <h2>ENTRE EM CONTATO</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Nossa equipe está pronta para oferecer o melhor atendimento e cuidado que seu veículo merece.</p>
+      </div>
+      
+<!-- Grids de conteúdo -->
+<div class="contato-grid">
+  <div class="contato-mapa">
+    <iframe
+      src="https://www.google.com/maps?q=R.+Manoel+Maria+Sara%C3%ADva+Filho,+177+-+Vila+das+Hortencias,+Jundia%C3%AD+-+SP,+13209-360&output=embed"
+      frameborder="0"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+  </div>
+        
+        <div class="contato-form">
+          <div class="form-header">
+            <h3><i class="fas fa-envelope"></i> Solicite um Orçamento</h3>
+            <div class="form-line"></div>
+          </div>
+          <form id="form-contato">
+            <input type="text" name="nome" placeholder="Nome Completo" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="tel" name="telefone" placeholder="Telefone" required>
+            <select name="tipo-servico" required>
+              <option disabled selected>Tipo de Serviço</option>
+              <option>Funilaria Premium</option>
+              <option>Martelinho de Ouro</option>
+              <option>Pintura Automotiva</option>
+              <option>Polimento e Cristalização</option>
+              <option>Estética Automotiva</option>
+              <option>Outros</option>
+            </select>
+            <select name="seguro" required>
+              <option disabled selected>Acionará o Seguro?</option>
+              <option>Sim</option>
+              <option>Não</option>
+            </select>
+            <select name="seguradora">
+              <option disabled selected>Qual Seguradora? (opcional)</option>
+              <option>Alfa Seguradora</option>
+              <option>Allianz</option>
+              <option>Azul Seguros</option>
+              <option>BB Seguros</option>
+              <option>Bradesco Seguros</option>
+              <option>Generali</option>
+              <option>HDI Seguros</option>
+              <option>Liberty Seguros</option>
+              <option>Mapfre</option>
+              <option>Porto Seguro</option>
+              <option>Sompo Seguros</option>
+              <option>SulAmérica</option>
+              <option>Tokio Marine</option>
+              <option>Youse</option>
+              <option>Zurich Seguros</option>
+            </select>
+            <textarea name="mensagem" placeholder="Mensagem Adicional" rows="4"></textarea>
+            <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> ENVIAR MENSAGEM</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="/img/logo.webp" alt="Doctor Car Logo">
+          <span class="footer-logo-text">DOCTOR CAR</span>
+        </div>
+        
+        <div class="footer-info">
+          <div class="footer-section">
+            <h4>Localização</h4>
+            <p><i class="fas fa-map-marker-alt"></i> R. Manoel Maria Saraíva Filho, 177</p>
+            <p><i class="fas fa-map-marker-alt"></i> Vila das Hortencias, Jundiaí - SP</p>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Contato</h4>
+            <p><i class="fas fa-phone-alt"></i> (11) 3963-8108</p>
+            <p><i class="fas fa-envelope"></i> funilaria.doctorcar@gmail.com</p>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Horários</h4>
+            <p><i class="fas fa-calendar-week"></i> Segunda a Sexta: 08h às 18h</p>
+            <p><i class="fas fa-calendar-day"></i> Sábado: 08h às 12h</p>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Redes Sociais</h4>
+            <div class="social-links">
+              <a href="https://www.instagram.com/doctorcarfunilaria" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+              <a href="https://www.facebook.com/doctorcarfunilaria" target="_blank">
+                <i class="fab fa-facebook"></i> Facebook
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-line"></div>
+        <p><i class="fas fa-copyright"></i> 2024 Doctor Car. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO WHATSAPP -->
+   
+<a
+  href="https://wa.me/5511971378400?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Fale conosco pelo WhatsApp"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
