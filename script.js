@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
       };
 
       try {
-const response = await fetch('https://script.google.com/macros/s/AKfycbwaNr58I9pGFNh13pH5oKOoQu81I5gtZSXiZczJgPJVSgAqEsQm5gelH-pT6WsYBw4/exec', {
+const response = await fetch('https://script.google.com/macros/s/AKfycbyLsUh-ou_kZFaP0lXQHKE0MaNFVv6_O4RhCrunUstQ7qT7xzSPw9eG9PKPr_-5IHlk/exec', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(data)
