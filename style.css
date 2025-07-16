@@ -191,7 +191,6 @@ p {
   /* Novo estilo para o logo na navbar */
   height: 50px; /* Ajuste o tamanho conforme necessário */
   width: auto;
-  filter: brightness(0) invert(1); /* Para logos brancos em fundo escuro */
 }
 
 .logo-text {
@@ -311,6 +310,10 @@ p {
   width: fit-content;
 }
 
+.hero-content {
+  text-align: center;
+}
+
 .hero-content h1 {
   margin-bottom: 2rem;
   color: var(--white);
@@ -331,6 +334,7 @@ p {
   display: flex;
   gap: 3rem;
   margin-top: 3rem;
+  justify-content: center;
 }
 
 .stat-item {
@@ -340,7 +344,7 @@ p {
 
 .stat-item i {
   font-size: 2rem;
-  color: var(--primary-red);
+  color: var(--white);
   margin-bottom: 1rem;
 }
 
@@ -727,7 +731,6 @@ p {
 .footer-brand img {
   height: 60px;
   margin: 0 auto 1rem;
-  filter: brightness(0) invert(1);
 }
 
 .footer-logo-text {
@@ -756,10 +759,10 @@ p {
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
   /* REMOVER ESTAS DUAS LINHAS:
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  */
+display: flex;
+align-items: center;
+gap: 8px;
+*/
 }
 
 .footer-section p {
@@ -858,7 +861,7 @@ p {
   border-radius: 6px;
   font-size: 14px;
   z-index: 9999;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
 }
 
@@ -899,12 +902,65 @@ p {
 }
 
 @media (max-width: 768px) {
-  .navbar .menu {
+  /* Esconder o formulário da seção HERO em mobile */
+  .hero-form {
     display: none;
   }
 
+  /* Ajustar o grid da seção HERO para ocupar 1 coluna quando o formulário estiver oculto */
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Menu mobile */
+  .navbar .menu {
+    /* Estado inicial: oculto e posicionado para deslizar */
+    display: flex; /* Mantém flex para layout interno */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Abaixo da navbar */
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-bg);
+    box-shadow: var(--shadow-md);
+    padding: 1rem 0;
+    max-height: 0; /* Para animação de altura */
+    overflow: hidden; /* Esconde o conteúdo que excede o max-height */
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  }
+
+  .navbar .menu.active {
+    max-height: 500px; /* Aumentado para garantir que todos os itens sejam visíveis */
+    padding: 1.5rem 0; /* Ajusta o padding quando ativo */
+  }
+
+  .navbar .menu li {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .navbar .menu li a {
+    padding: 1rem 0;
+    justify-content: center; /* Centraliza os links no menu mobile */
+  }
+
   .menu-toggle {
-    display: flex;
+    display: flex; /* Mostra o ícone do hambúrguer */
+    z-index: 1001; /* Garante que esteja acima do menu */
+  }
+
+  /* Animação do ícone do hambúrguer para 'X' */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   .hero-stats {
