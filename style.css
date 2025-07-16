@@ -846,6 +846,30 @@ p {
   transform: scale(1.1);
 }
 
+/* ===== FORM TOAST ===== */
+.form-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 9999;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.form-toast.success {
+  background-color: #28a745;
+}
+
+.form-toast.error {
+  background-color: #dc3545;
+}
+
 /* ===== RESPONSIVO ===== */
 @media (max-width: 1200px) {
   .hero-grid,
